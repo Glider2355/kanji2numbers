@@ -27,7 +27,7 @@ def number2kanji(number):
 @app.route("/v1/kanji2number/<kanji>", methods=["GET"])
 def kanji2number(kanji):
     try:
-        return str(k2n(kanji))
+        return k2n(kanji)
     except:
         return make_response("", 204)
 
