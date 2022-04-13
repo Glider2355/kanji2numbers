@@ -39,7 +39,7 @@ def number2kanji(num):
     NumList = NumList[::-1]
 
     # 零の処理
-    if len(NumList) == 1 and NumList[0][0] == "0":
+    if len(NumList[0]) == 1 and NumList[0][0] == "0":
         kanji = "零"
 
     elif NumList[0][0] == "0":
