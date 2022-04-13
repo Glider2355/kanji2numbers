@@ -55,7 +55,7 @@ def kanji2number(kansuji):
         
         # 変換できない入力
         else:
-            make_response("", 204)
+            return make_response("", 204)
 
     number += tmp1 + tmp2
     return number

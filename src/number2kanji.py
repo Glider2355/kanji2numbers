@@ -43,7 +43,7 @@ def number2kanji(num):
         kanji = "零"
 
     elif NumList[0] == "0":
-        make_response("", 204)
+        return make_response("", 204)
 
     else:
         # 4桁ずつ処理する
