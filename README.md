@@ -5,7 +5,7 @@
 https://kanji2numbers.herokuapp.com/
 ### number2kanji(アラビア数字→漢数字)
 https://kanji2numbers.herokuapp.com/v1/number2kanji/{変換元のアラビア数字}
-### kanji2number(漢数字右アラビア数字)
+### kanji2number(漢数字→アラビア数字)
 https://kanji2numbers.herokuapp.com/v1/kanji2number/{変換元の漢数字}
 
 ## 注意点
