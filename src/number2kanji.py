@@ -1,3 +1,5 @@
+from flask import make_response
+
 kansuji = {
     0:"零",
     1:"壱",
@@ -39,6 +41,9 @@ def number2kanji(num):
     # 零の処理
     if len(NumList) == 1 and NumList[0] == "0":
         kanji = "零"
+
+    elif NumList[0] == "0":
+        make_response("", 204)
 
     else:
         # 4桁ずつ処理する

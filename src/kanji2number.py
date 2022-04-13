@@ -1,5 +1,4 @@
-from asyncio import base_events
-
+from flask import make_response
 
 suji = {
     "零":0,
@@ -56,7 +55,7 @@ def kanji2number(kansuji):
         
         # 変換できない入力
         else:
-            0 / 0
+            make_response("", 204)
 
     number += tmp1 + tmp2
     return number
