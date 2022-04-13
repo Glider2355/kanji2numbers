@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>kanjinumbers.com</h1>
+    <section>
+        <h2>number2kanji</h2>
+        <div>エンドポイント:</div>
+        <div>
+            <label> https://kanjinumbers.com/v1/number2kanji/
+                <input type="text" id="userInput1" />
+            </label>
+            <button id="submitButton1">送信</button>
+        </div>
+        <div>結果:</div>
+        <textarea id="result1"></textarea>
+    </section>
+
+    <section>
+        <h2>kanji2number</h2>
+        <div>エンドポイント:</div>
+        <div>
+            <label> https://kanjinumbers.com/v1/kanji2number/
+                <input type="text" id="userInput2" />
+            </label>
+            <button id="submitButton2">送信</button>
+        </div>
+        <div>結果:</div>
+        <textarea id="result2"></textarea>
+    </section>
+
+
+    <script>
+        const domain = "https://kanji2numbers.herokuapp.com"
+
+        const userInput1 = document.getElementById("userInput1")
+        const submitButton1 = document.getElementById("submitButton1")
+        const resultTextarea1 = document.getElementById("result1")
+
+        // number2kanji
+        const onClick1 = async () => {
+            const number = userInput1.value
+            const url = domain + "/v1/number2kanji/" + number
+            
+
+            const res = await fetch(url)
+            if (res.status === 200) {
+                const data = await res.text()
+                resultTextarea1.value = data
+            } else {
+                resultTextarea1.value = "status code: " + res.status
+            }
+        }
+        
+        submitButton1.addEventListener("click", onClick1)
+
+        // kanji2number
+        const userInput2 = document.getElementById("userInput2")
+        const submitButton2 = document.getElementById("submitButton2")
+        const resultTextarea2 = document.getElementById("result2")
+
+        const onClick2 = async () => {
+            const number = userInput2.value
+            const url = domain + "/v1/kanji2number/" + number
+
+            const res = await fetch(url)
+            if (res.status === 200) {
+                const data = await res.text()
+                resultTextarea2.value = data
+            } else {
+                resultTextarea2.value = "status code: " + res.status
+            }
+        }
+        
+        submitButton2.addEventListener("click", onClick2)
+
+    </script>
+</body>
+
+</html>
