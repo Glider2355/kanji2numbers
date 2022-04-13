@@ -20,10 +20,9 @@ def top_page():
 @app.route("/v1/number2kanji/<number>", methods=["GET"])
 def number2kanji(number):
     try:
-        return str(n2k(number))
+        return n2k(number)
     except:
         return make_response("", 204)
-
 
 @app.route("/v1/kanji2number/<kanji>", methods=["GET"])
 def kanji2number(kanji):

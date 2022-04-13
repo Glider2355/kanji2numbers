@@ -58,4 +58,4 @@ def kanji2number(kansuji):
             return make_response("", 204)
 
     number += tmp1 + tmp2
-    return number
+    return str(number)

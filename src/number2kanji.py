@@ -63,5 +63,5 @@ def number2kanji(num):
                 tmp += keta[digit] 
                 kanji += tmp
 
-    return kanji
+    return str(kanji)
     
