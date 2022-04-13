@@ -37,12 +37,12 @@ def number2kanji(num):
 
     # リストを逆順にする
     NumList = NumList[::-1]
-
+    num = "".join(NumList)
     # 零の処理
-    if len(NumList[0]) == 1 and NumList[0][0] == "0":
+    if len(num) == 1 and num[0] == "0":
         kanji = "零"
 
-    elif NumList[0][0] == "0":
+    elif num[0] == "0":
         return make_response("", 204)
 
     else:
